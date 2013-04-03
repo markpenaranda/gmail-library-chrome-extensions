@@ -5,13 +5,14 @@ function Gmailx (){
 
 	p.SELECTORS = {
 		header 				:	"#\\:ro",
-		sidebar				: 	"#\\:aw .LrBjie .TK :first",
+		sidebar				: 	"div#\\:aw .LrBjie:first",
 		email_body			: 	".ii.gt.adP.adO",
 		email_title			: 	".ha .hP",
 		email_sender		: 	".iw .gD",
 		inbox_rows 			: 	".xY .xS .xT .y6",
 		container			: 	"div.AO .Tm.aeJ .aeF .nH .BltHke.nH.oy8Mbf .ae4.IU.UJ",
-		navbar_gmail		: 	"div#gbu.gbes .gbvg ol.gbtc"
+		navbar_gmail		: 	"div#gbu.gbes .gbvg ol.gbtc",
+		email_to 			: 	"div #\\:rp #\\:rr div div div div table tr td div div div div table tbody tr td span span"
 	
 	};
 
@@ -25,11 +26,18 @@ function Gmailx (){
 	p.emailBody 	= $(this.SELECTORS.email_body);
 	p.email_title	= $(this.SELECTORS.email_title);
 	p.navbar 		= $(this.SELECTORS.navbar_gmail);
-
-	p.getSenderEmailAddress = function(){
+	p.container 	= $(this.SELECTORS.container);
+	
+	p.getEmailFrom = function(){
 		var e = $(this.SELECTORS.email_sender).attr("email");
+		console.log(e);
 		return e;
 	};
+
+	p.getEmailTo = function (){
+		var e = $(this.SELECTORS.email_to).attr("email");
+		return e;
+	}
 
 
 /// Get E-Mail Details 
