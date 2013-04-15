@@ -1,5 +1,6 @@
 function Gmailx (){
-	p = Gmailx.prototype;
+   	p = Gmailx.prototype;
+
 
 // Selectors for GMail DOM Elements
 
